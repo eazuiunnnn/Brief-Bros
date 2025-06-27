@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brief Bros</title>
+  <style>
+    :root {
+      --main-color: #0f172a;
+      --accent-color: #2563eb;
+      --text-light: #e2e8f0;
+      --text-dark: #1e293b;
+      --bg-light: #f1f5f9;
+      --bg-dark: #0f172a;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--bg-dark);
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--accent-color);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background: white;
+    }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      background: var(--bg-dark);
+      padding: 1rem;
+    }
+
+    .mobile-nav a {
+      margin: 0.5rem 0;
+    }
+
+    .hero {
+      padding: 4rem 2rem;
+      text-align: center;
+      background: white;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    section {
+      padding: 4rem 2rem;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .footer {
+      background: var(--bg-dark);
+      color: white;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .mobile-nav.show {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Brief Bros</div>
+    <nav id="main-nav">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="hamburger" onclick="toggleMobileMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </header>
+
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="#about" onclick="toggleMobileMenu()">About</a>
+    <a href="#services" onclick="toggleMobileMenu()">Services</a>
+    <a href="#portfolio" onclick="toggleMobileMenu()">Portfolio</a>
+    <a href="#testimonials" onclick="toggleMobileMenu()">Testimonials</a>
+    <a href="#contact" onclick="toggleMobileMenu()">Contact</a>
+  </div>
+
+  <div class="hero">
+    <h1>Welcome to Brief Bros</h1>
+    <p>We create stunning, effective, and fast-loading digital experiences with simplicity at the core.</p>
+  </div>
+
+  <section id="about">
+    <h2 class="section-title">About Us</h2>
+    <p style="max-width:700px; margin:auto;">Brief Bros is a creative tech collective that believes less is more. We specialize in building clean, minimalist websites that pack a punch. Whether you're a startup or a growing brand, we’ll help you make a bold digital impression.</p>
+  </section>
+
+  <section id="services">
+    <h2 class="section-title">Our Services</h2>
+    <ul style="max-width:700px; margin:auto; list-style:none; padding:0; text-align:center;">
+      <li>✔ Custom Website Development</li>
+      <li>✔ E-commerce Setup</li>
+      <li>✔ UI/UX Design</li>
+      <li>✔ Branding & Identity</li>
+      <li>✔ SEO & Performance Optimization</li>
+    </ul>
+  </section>
+
+  <section id="portfolio">
+    <h2 class="section-title">Our Work</h2>
+    <p style="max-width:700px; margin:auto;">We’ve built fast and modern websites for creators, consultants, shops, and brands. Portfolio samples available upon request — or check back soon for live previews.</p>
+  </section>
+
+  <section id="testimonials">
+    <h2 class="section-title">What Clients Say</h2>
+    <blockquote style="max-width:600px; margin:auto; font-style:italic;">
+      "Brief Bros helped us launch in under a week. Clean design, blazing speed, and no fluff. Highly recommend!"<br> — A Happy Client
+    </blockquote>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title">Get in Touch</h2>
+    <p style="text-align:center;">A simple contact form is coming soon. Stay tuned!</p>
+  </section>
+
+  <footer class="footer">
+    &copy; 2025 Brief Bros. All rights reserved.
+  </footer>
+
+  <script>
+    function toggleMobileMenu() {
+      const nav = document.getElementById("mobile-nav");
+      nav.classList.toggle("show");
+    }
+  </script>
+</body>
+</html>
